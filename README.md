@@ -24,8 +24,7 @@ It also supports many advanced features:
 
 ## Download Medis on Windows
 
-You can download compiled installer of Medis for Windows from the below page
-[download page](https://github.com/classfellow/medis/releases/tag/win)
+build from [pr](https://github.com/luin/medis/pull/180)
 
 ## Download Medis on Mac
 

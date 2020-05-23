@@ -1,0 +1,21 @@
+language: node_js
+os: windows
+node_js:
+  - 12
+before_install:
+  - export version="$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+  - export filename="medis.win.$version.tar.gz"
+  - echo "build version $version..."
+install: npm install
+script:
+  - npm run packWin
+  - mv dist/out/Medis-win32-ia32 dist/Medis
+  - tar -zcvf dist/$filename -C dist/ Medis
+
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  file: "dist/$filename"
+  skip_cleanup: true
+  on:
+    tags: true
